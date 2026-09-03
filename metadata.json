@@ -1,0 +1,6 @@
+{
+  "name": "PulsoSala",
+  "description": "Sistema de telemetría y monitoreo en tiempo real de salones de cómputo y estaciones de trabajo con conexión Supabase",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
