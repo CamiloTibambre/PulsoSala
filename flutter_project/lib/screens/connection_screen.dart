@@ -8,7 +8,7 @@ class ConnectionScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF0D112A),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C25).withOpacity(0.85),
+        backgroundColor: const Color(0xFF080C25).withValues(alpha: 0.85),
         title: const Text('Canal en Tiempo Real', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
       ),
       body: Center(
@@ -22,7 +22,7 @@ class ConnectionScreen extends StatelessWidget {
                 height: 100,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: const Color(0xFF06B6D4).withOpacity(0.2),
+                  color: const Color(0xFF06B6D4).withValues(alpha: 0.2),
                   border: Border.all(color: const Color(0xFF4CD7F6), width: 2),
                 ),
                 child: const Icon(Icons.hub, size: 48, color: Color(0xFF4CD7F6)),
@@ -45,7 +45,7 @@ class ConnectionScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: const Color(0xFF161A33),
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: const Color(0xFF4AE176).withOpacity(0.4)),
+                  border: Border.all(color: const Color(0xFF4AE176).withValues(alpha: 0.4)),
                 ),
                 child: const Row(
                   mainAxisSize: MainAxisSize.min,

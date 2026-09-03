@@ -64,7 +64,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       body: _screens[_currentIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: const Color(0xFF080C25).withOpacity(0.85),
+          color: const Color(0xFF080C25).withValues(alpha: 0.85),
           border: const Border(top: BorderSide(color: Colors.white10)),
         ),
         child: BottomNavigationBar(

@@ -5,23 +5,23 @@ class SupabaseConfig {
   // https://supabase.com/dashboard/project/_/settings/api
   static const String supabaseUrl = String.fromEnvironment(
     'SUPABASE_URL',
-    defaultValue: 'https://xyzcompany.supabase.co',
+    defaultValue: 'https://sadeqzcwusrgrgdgmcfz.supabase.co',
   );
 
   static const String supabaseAnonKey = String.fromEnvironment(
     'SUPABASE_ANON_KEY',
-    defaultValue: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+    defaultValue: 'sb_publishable_OqpdFiLJJPD_NN4klFoAIg_7Hil1EM_',
   );
 
   static Future<void> initialize() async {
-    await Supabase.initialize(
-      url: supabaseUrl,
-      anonKey: supabaseAnonKey,
-      realtimeClientOptions: const RealtimeClientOptions(
-        eventsPerSecond: 10,
-      ),
-    );
-  }
+  await Supabase.initialize(
+    url: supabaseUrl,
+    publishableKey: supabaseAnonKey, // antes: anonKey: supabaseAnonKey,
+    realtimeClientOptions: const RealtimeClientOptions(
+      eventsPerSecond: 10,
+    ),
+  );
+}
 
   static SupabaseClient get client => Supabase.instance.client;
 }

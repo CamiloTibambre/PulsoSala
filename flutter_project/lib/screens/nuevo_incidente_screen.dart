@@ -12,9 +12,9 @@ class _NuevoIncidenteScreenState extends State<NuevoIncidenteScreen> {
   String _state = 'falla';
   String _subsystem = 'Monitor';
   final TextEditingController _obsController = TextEditingController(
-    text: 'Pantalla secundaria no recibe señal DisplayPort tras reinicio de nodo.',
+    text:
+        'Pantalla secundaria no recibe señal DisplayPort tras reinicio de nodo.',
   );
-  String _priority = 'Bloqueante';
   bool _pushAlert = true;
 
   @override
@@ -22,8 +22,9 @@ class _NuevoIncidenteScreenState extends State<NuevoIncidenteScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF0D112A),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C25).withOpacity(0.85),
-        title: const Text('Nuevo Incidente', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        backgroundColor: const Color(0xFF080C25).withValues(alpha: 0.85),
+        title: const Text('Nuevo Incidente',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -36,7 +37,7 @@ class _NuevoIncidenteScreenState extends State<NuevoIncidenteScreen> {
               border: Border.all(color: Colors.white10),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.between,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
@@ -45,16 +46,28 @@ class _NuevoIncidenteScreenState extends State<NuevoIncidenteScreen> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('PUESTO TELEMETRÍA', style: TextStyle(fontSize: 10, color: Color(0xFF4CD7F6), fontWeight: FontWeight.bold)),
-                        Text('${widget.deviceId} · Fila C', style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFFDEE0FF))),
+                        const Text('PUESTO TELEMETRÍA',
+                            style: TextStyle(
+                                fontSize: 10,
+                                color: Color(0xFF4CD7F6),
+                                fontWeight: FontWeight.bold)),
+                        Text('${widget.deviceId} · Fila C',
+                            style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFDEE0FF))),
                       ],
                     ),
                   ],
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                  decoration: BoxDecoration(color: const Color(0xFF080C25), borderRadius: BorderRadius.circular(12)),
-                  child: const Text('SALA 03', style: TextStyle(fontSize: 10, color: Color(0xFFBCC9CD))),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(
+                      color: const Color(0xFF080C25),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: const Text('SALA 03',
+                      style: TextStyle(fontSize: 10, color: Color(0xFFBCC9CD))),
                 ),
               ],
             ),
@@ -69,15 +82,23 @@ class _NuevoIncidenteScreenState extends State<NuevoIncidenteScreen> {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     decoration: BoxDecoration(
-                      color: _state == 'operativo' ? const Color(0xFF14BF59).withOpacity(0.3) : const Color(0xFF161A33),
+                      color: _state == 'operativo'
+                          ? const Color(0xFF14BF59).withValues(alpha: 0.3)
+                          : const Color(0xFF161A33),
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: _state == 'operativo' ? const Color(0xFF4AE176) : Colors.white10),
+                      border: Border.all(
+                          color: _state == 'operativo'
+                              ? const Color(0xFF4AE176)
+                              : Colors.white10),
                     ),
                     child: const Column(
                       children: [
                         Icon(Icons.check_circle, color: Color(0xFF4AE176)),
                         SizedBox(height: 4),
-                        Text('Operativo', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFDEE0FF))),
+                        Text('Operativo',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFDEE0FF))),
                       ],
                     ),
                   ),
@@ -90,15 +111,23 @@ class _NuevoIncidenteScreenState extends State<NuevoIncidenteScreen> {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     decoration: BoxDecoration(
-                      color: _state == 'falla' ? const Color(0xFF93000A).withOpacity(0.5) : const Color(0xFF161A33),
+                      color: _state == 'falla'
+                          ? const Color(0xFF93000A).withValues(alpha: 0.5)
+                          : const Color(0xFF161A33),
                       borderRadius: BorderRadius.circular(14),
-                      border: Border.all(color: _state == 'falla' ? const Color(0xFFFFB4AB) : Colors.white10),
+                      border: Border.all(
+                          color: _state == 'falla'
+                              ? const Color(0xFFFFB4AB)
+                              : Colors.white10),
                     ),
                     child: const Column(
                       children: [
                         Icon(Icons.error, color: Color(0xFFFFB4AB)),
                         SizedBox(height: 4),
-                        Text('Con Falla', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFDEE0FF))),
+                        Text('Con Falla',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFDEE0FF))),
                       ],
                     ),
                   ),
@@ -107,24 +136,37 @@ class _NuevoIncidenteScreenState extends State<NuevoIncidenteScreen> {
             ],
           ),
           const SizedBox(height: 16),
-          const Text('SUBSISTEMA AFECTADO', style: TextStyle(fontSize: 11, color: Color(0xFFBCC9CD), fontWeight: FontWeight.bold)),
+          const Text('SUBSISTEMA AFECTADO',
+              style: TextStyle(
+                  fontSize: 11,
+                  color: Color(0xFFBCC9CD),
+                  fontWeight: FontWeight.bold)),
           const SizedBox(height: 8),
           Wrap(
             spacing: 8,
-            children: ['Hardware', 'Monitor', 'Periféricos', 'Red LAN'].map((sub) {
+            children:
+                ['Hardware', 'Monitor', 'Periféricos', 'Red LAN'].map((sub) {
               final isSel = _subsystem == sub;
               return ChoiceChip(
                 label: Text(sub),
                 selected: isSel,
                 onSelected: (_) => setState(() => _subsystem = sub),
-                selectedColor: const Color(0xFF06B6D4).withOpacity(0.3),
+                selectedColor: const Color(0xFF06B6D4).withValues(alpha: 0.3),
                 backgroundColor: const Color(0xFF161A33),
-                labelStyle: TextStyle(color: isSel ? const Color(0xFF4CD7F6) : const Color(0xFFBCC9CD), fontWeight: FontWeight.bold),
+                labelStyle: TextStyle(
+                    color: isSel
+                        ? const Color(0xFF4CD7F6)
+                        : const Color(0xFFBCC9CD),
+                    fontWeight: FontWeight.bold),
               );
             }).toList(),
           ),
           const SizedBox(height: 16),
-          const Text('BITÁCORA DE OBSERVACIÓN TÉCNICA', style: TextStyle(fontSize: 11, color: Color(0xFFBCC9CD), fontWeight: FontWeight.bold)),
+          const Text('BITÁCORA DE OBSERVACIÓN TÉCNICA',
+              style: TextStyle(
+                  fontSize: 11,
+                  color: Color(0xFFBCC9CD),
+                  fontWeight: FontWeight.bold)),
           const SizedBox(height: 8),
           TextField(
             controller: _obsController,
@@ -133,31 +175,39 @@ class _NuevoIncidenteScreenState extends State<NuevoIncidenteScreen> {
             decoration: InputDecoration(
               filled: true,
               fillColor: const Color(0xFF080C25),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(14), borderSide: const BorderSide(color: Colors.white10)),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(14),
+                  borderSide: const BorderSide(color: Colors.white10)),
             ),
           ),
           const SizedBox(height: 16),
           SwitchListTile(
-            title: const Text('Alerta Push al Técnico', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-            subtitle: const Text('Despacho inmediato a guardia técnica', style: TextStyle(fontSize: 11, color: Color(0xFFBCC9CD))),
+            title: const Text('Alerta Push al Técnico',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+            subtitle: const Text('Despacho inmediato a guardia técnica',
+                style: TextStyle(fontSize: 11, color: Color(0xFFBCC9CD))),
             value: _pushAlert,
             onChanged: (val) => setState(() => _pushAlert = val),
-            activeColor: const Color(0xFF4CD7F6),
+            activeThumbColor: const Color(0xFF4CD7F6),
           ),
           const SizedBox(height: 20),
           ElevatedButton.icon(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Guardado y sincronizado con Supabase')),
+                const SnackBar(
+                    content: Text('Guardado y sincronizado con Supabase')),
               );
               Navigator.pop(context);
             },
-            icon: const Icon(Icons.sync_saved_locally, color: Color(0xFF003640)),
-            label: const Text('Guardar y Sincronizar', style: TextStyle(color: Color(0xFF003640), fontWeight: FontWeight.bold)),
+            icon: const Icon(Icons.sync, color: Color(0xFF003640)),
+            label: const Text('Guardar y Sincronizar',
+                style: TextStyle(
+                    color: Color(0xFF003640), fontWeight: FontWeight.bold)),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF4CD7F6),
               minimumSize: const Size(double.infinity, 50),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)),
             ),
           ),
         ],

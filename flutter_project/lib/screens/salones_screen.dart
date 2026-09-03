@@ -104,7 +104,7 @@ class _SalonesScreenState extends State<SalonesScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF0D112A),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C25).withOpacity(0.8),
+        backgroundColor: const Color(0xFF080C25).withValues(alpha: 0.8),
         elevation: 0,
         title: Row(
           children: [
@@ -113,15 +113,19 @@ class _SalonesScreenState extends State<SalonesScreen> {
               decoration: BoxDecoration(
                 color: const Color(0xFF161A33),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: const Color(0xFF4CD7F6).withOpacity(0.4)),
+                border: Border.all(
+                    color: const Color(0xFF4CD7F6).withValues(alpha: 0.4)),
               ),
-              child: const Icon(Icons.desktop_windows, color: Color(0xFF4CD7F6), size: 18),
+              child: const Icon(Icons.desktop_windows,
+                  color: Color(0xFF4CD7F6), size: 18),
             ),
             const SizedBox(width: 8),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('PulsoSala', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                const Text('PulsoSala',
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 Row(
                   children: [
                     Container(
@@ -133,7 +137,9 @@ class _SalonesScreenState extends State<SalonesScreen> {
                       ),
                     ),
                     const SizedBox(width: 4),
-                    const Text('EN VIVO · SUPABASE', style: TextStyle(fontSize: 9, color: Color(0xFF6BFF8F))),
+                    const Text('EN VIVO · SUPABASE',
+                        style:
+                            TextStyle(fontSize: 9, color: Color(0xFF6BFF8F))),
                   ],
                 ),
               ],
@@ -146,21 +152,34 @@ class _SalonesScreenState extends State<SalonesScreen> {
         children: [
           const Text(
             'CAMPUS CENTRAL · EDIFICIO TECNOLÓGICO',
-            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFFBCC9CD), letterSpacing: 1.2),
+            style: TextStyle(
+                fontSize: 10,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFBCC9CD),
+                letterSpacing: 1.2),
           ),
           const SizedBox(height: 4),
           Row(
-            mainAxisAlignment: MainAxisAlignment.between,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text('Salones de Cómputo', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xFFDEE0FF))),
+              const Text('Salones de Cómputo',
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFDEE0FF))),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 decoration: BoxDecoration(
                   color: const Color(0xFF242842),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFF4CD7F6).withOpacity(0.3)),
+                  border: Border.all(
+                      color: const Color(0xFF4CD7F6).withValues(alpha: 0.3)),
                 ),
-                child: const Text('6 ESPACIOS', style: TextStyle(fontSize: 10, color: Color(0xFF4CD7F6), fontWeight: FontWeight.bold)),
+                child: const Text('6 ESPACIOS',
+                    style: TextStyle(
+                        fontSize: 10,
+                        color: Color(0xFF4CD7F6),
+                        fontWeight: FontWeight.bold)),
               ),
             ],
           ),
@@ -172,12 +191,16 @@ class _SalonesScreenState extends State<SalonesScreen> {
             style: const TextStyle(color: Color(0xFFDEE0FF), fontSize: 14),
             decoration: InputDecoration(
               hintText: 'Buscar salón, tecnología, IP o falla...',
-              hintStyle: const TextStyle(color: Color(0xFFBCC9CD), fontSize: 13),
-              prefixIcon: const Icon(Icons.search, color: Color(0xFF4CD7F6), size: 20),
+              hintStyle:
+                  const TextStyle(color: Color(0xFFBCC9CD), fontSize: 13),
+              prefixIcon:
+                  const Icon(Icons.search, color: Color(0xFF4CD7F6), size: 20),
               filled: true,
-              fillColor: const Color(0xFF161A33).withOpacity(0.8),
+              fillColor: const Color(0xFF161A33).withValues(alpha: 0.8),
               contentPadding: const EdgeInsets.symmetric(vertical: 0),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide.none),
             ),
           ),
           const SizedBox(height: 12),
@@ -209,14 +232,18 @@ class _SalonesScreenState extends State<SalonesScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFF4CD7F6).withOpacity(0.2) : const Color(0xFF242842).withOpacity(0.6),
+          color: isSelected
+              ? const Color(0xFF4CD7F6).withValues(alpha: 0.2)
+              : const Color(0xFF242842).withValues(alpha: 0.6),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: isSelected ? const Color(0xFF4CD7F6) : Colors.transparent),
+          border: Border.all(
+              color: isSelected ? const Color(0xFF4CD7F6) : Colors.transparent),
         ),
         child: Text(
           label,
           style: TextStyle(
-            color: isSelected ? const Color(0xFF4CD7F6) : const Color(0xFFBCC9CD),
+            color:
+                isSelected ? const Color(0xFF4CD7F6) : const Color(0xFFBCC9CD),
             fontWeight: FontWeight.bold,
             fontSize: 12,
           ),
@@ -237,10 +264,12 @@ class _SalonesScreenState extends State<SalonesScreen> {
         margin: const EdgeInsets.only(bottom: 12),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFF1A1E37).withOpacity(0.7),
+          color: const Color(0xFF1A1E37).withValues(alpha: 0.7),
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: room.priorityAlert ? const Color(0xFFFFB4AB).withOpacity(0.3) : Colors.white10,
+            color: room.priorityAlert
+                ? const Color(0xFFFFB4AB).withValues(alpha: 0.3)
+                : Colors.white10,
           ),
         ),
         child: Column(
@@ -251,7 +280,7 @@ class _SalonesScreenState extends State<SalonesScreen> {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF06B6D4).withOpacity(0.2),
+                    color: const Color(0xFF06B6D4).withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: const Icon(Icons.router, color: Color(0xFF4CD7F6)),
@@ -261,21 +290,39 @@ class _SalonesScreenState extends State<SalonesScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(room.name, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: Color(0xFFDEE0FF))),
-                      Text(room.type, style: const TextStyle(fontSize: 12, color: Color(0xFFBCC9CD))),
+                      Text(room.name,
+                          style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFFDEE0FF))),
+                      Text(room.type,
+                          style: const TextStyle(
+                              fontSize: 12, color: Color(0xFFBCC9CD))),
                     ],
                   ),
                 ),
-                const Text('Detalle', style: TextStyle(color: Color(0xFF4CD7F6), fontWeight: FontWeight.bold, fontSize: 13)),
-                const Icon(Icons.arrow_forward, color: Color(0xFF4CD7F6), size: 16),
+                const Text('Detalle',
+                    style: TextStyle(
+                        color: Color(0xFF4CD7F6),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13)),
+                const Icon(Icons.arrow_forward,
+                    color: Color(0xFF4CD7F6), size: 16),
               ],
             ),
             const SizedBox(height: 12),
             Row(
-              mainAxisAlignment: MainAxisAlignment.between,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('DISPONIBILIDAD DE NODOS', style: TextStyle(fontSize: 10, color: Color(0xFFBCC9CD), fontWeight: FontWeight.bold)),
-                Text('${room.activeCount} / ${room.capacity} (${room.operativity}%)', style: const TextStyle(fontSize: 11, color: Color(0xFFDEE0FF))),
+                const Text('DISPONIBILIDAD DE NODOS',
+                    style: TextStyle(
+                        fontSize: 10,
+                        color: Color(0xFFBCC9CD),
+                        fontWeight: FontWeight.bold)),
+                Text(
+                    '${room.activeCount} / ${room.capacity} (${room.operativity}%)',
+                    style: const TextStyle(
+                        fontSize: 11, color: Color(0xFFDEE0FF))),
               ],
             ),
             const SizedBox(height: 6),
@@ -285,7 +332,9 @@ class _SalonesScreenState extends State<SalonesScreen> {
                 value: room.operativity / 100,
                 backgroundColor: const Color(0xFF080C25),
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  room.operativity == 100 ? const Color(0xFF4AE176) : const Color(0xFF4CD7F6),
+                  room.operativity == 100
+                      ? const Color(0xFF4AE176)
+                      : const Color(0xFF4CD7F6),
                 ),
                 minHeight: 6,
               ),

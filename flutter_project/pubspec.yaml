@@ -16,7 +16,7 @@ dependencies:
   # Typography & Design
   google_fonts: ^6.2.1
   # Icons
-  lucide_icons: ^0.263.0
+  lucide_icons: ^0.257.0
   # Animations & UI
   flutter_animate: ^4.5.0
   intl: ^0.19.0
